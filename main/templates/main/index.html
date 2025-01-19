@@ -1,0 +1,416 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <section class="section section-promo" id="promo">
+        <div class="wrap">
+            <div class="promo-box">
+                <div class="promo-fcol">
+                    <div>
+                        <div class="promo-pl">АКЦИЯ НА ГОТОВЫЕ БАНИ</div>
+                        <div class="title-promo">Закажите баню <span>по цене 2024 года</span> прямо сейчас</div>
+                    </div>
+                    <a class="button" href="/gotovie/">Выбрать баню</a>
+                </div>
+                <div class="promo-container">
+                    <div class="promo-item">
+                        <div class="promo-svg">
+                            <img src="images/Z8eXWaM63DMi.svg" alt=""/>
+                        </div>
+                        <div class="promo-desc"><span>Бесплатное хранение</span> бани на производстве до весны</div>
+                    </div>
+                    <div class="promo-item">
+                        <div class="promo-svg">
+                            <img src="images/DuvJ6oMvmyc9.svg" alt=""/>
+                        </div>
+                        <div class="promo-desc">Строим из чистого <span>зимнего леса</span></div>
+                    </div>
+                    <div class="promo-item last">
+                        <div class="promo-svg">
+                            <img src="images/8Uxyeahbx0tt.svg" alt=""/>
+                        </div>
+                        <div class="promo-desc"><span>Доступна рассрочка</span> от банка</div>
+                    </div>
+                </div>
+                <a class="button mob" href="/gotovie/">Выбрать баню</a>
+            </div>
+        </div>
+    </section>
+    <section id="all" class="catalog-block padding--120">
+        <div class="wrap">
+            <div class="title-block longtitle">
+                Каталог бань из бруса <span>«под ключ»</span>
+                <div class="title-block--sub">Выберите типоразмер бани</div>
+            </div>
+            <div class="catalog-list">
+                <a href="/gotovie/" class="catalog_block-item cat-gotov">
+                    <h3 class="catalog_block-item_title"><span>Готовые бани</span> из бруса</h3>
+                    <div class="catdesc2">Мобильные бани: <span>от 257 000₽</span>.</div>
+                    <div class="catdesc"><span>2×2</span> <span>2×3</span> <span>2×4</span> <span>2×5</span>
+                        <span>2×6</span> <span>другие</span></div>
+
+                    <div class="house-item__btn">
+                        <div class="button"><span>Посмотреть проекты</span></div>
+                    </div>
+                </a>
+                <a href="/bany/" class="catalog_block-item cat-big">
+                    <h3 class="catalog_block-item_title"><span>Строительство бань</span> из бруса</h3>
+                    <div class="catdesc2">Полноразмерные бани: <span>от 450 000₽</span>.</div>
+                    <div class="catdesc"><span>4×4</span> <span>4×5</span> <span>5×6</span> <span>6×7</span>
+                        <span>6×10</span> <span>другие</span></div>
+
+                    <div class="house-item__btn">
+                        <div class="button"><span>Посмотреть проекты</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section aria-label="Каталог" class="house-block padding--120">
+        <div class="wrap">
+            <div class="title-block longtitle">Популярные проекты бань <span>«под ключ»</span></div>
+            <div class="catalog-list">
+                {% include 'components/catalog-card.html' %}
+                {% include 'components/catalog-card.html' %}
+                {% include 'components/catalog-card.html' %}
+                {% include 'components/catalog-card.html' %}
+            </div>
+        </div>
+        <div class="house-item__btn allprojects">
+            <a class="button korrbut" href="#all"><span>Посмотреть все проекты</span></a>
+        </div>
+    </section>
+    <section class="cta cta-block-1 padding--100 lazyload">
+        <div class="wrap">
+            <div class="cta-text">
+                <div class="title-block">Не нашли <span>подходящий</span> проект?</div>
+                <div class="cta-text__list">
+                    <div class="stages-cart-item__name-2">
+                        Разработаем индивидуальный:
+                    </div>
+                    <div class="list-check">Учтем все Ваши пожелания</div>
+                    <div class="list-check">
+                        Сделаем несколько вариантов<br/>
+                        планировки бани
+                    </div>
+                    <div class="list-check">
+                        Адаптируем проект под Ваш<br/>
+                        бюджет без потери качества
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-form">
+                <div class="cta-form--wrap">
+                    <div class="popup-form--wrap form-hide">
+                        <div class="cta-form__title ta-center">
+                            Свяжитесь с нами
+                        </div>
+
+                        <div class="ta-center msgall">
+                            <a href="tel:+73822330068" class="number-block"
+                               style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
+
+                            <div class="messager2">
+                                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                            </div>
+                        </div>
+
+                        <div class="cta-form__desc ta-center">
+                            Или оставьте свои контакты.<br/>
+                            Мы свяжемся с Вами в ближайшее время!
+                        </div>
+                        <div class="popup__form">
+                            <form id="form_cta_1" class="form-js" enctype="multipart/form-data" method="post">
+                                <input type="hidden" name="project_name" value="Крепкий Дом Бани"/>
+                                <input type="hidden" name="admin_email" value="info@tomsk-bani.ru"/>
+                                <input type="hidden" name="form_subject" value="Крепкий Дом Бани"/>
+                                <input type="text" class="hidden" name="agree"/>
+                                <div class="cta-form__input">
+                                    <input type="text" maxlength="15" name="Имя" placeholder="Введите ваше имя"
+                                           class="input-text"/>
+                                </div>
+                                <div class="cta-form__input">
+                                    <input type="text" name="Телефон" placeholder="Введите ваш телефон"
+                                           class="input-text mask validate"/>
+                                </div>
+
+                                <div class="cta-form__btn">
+                                    <div class="button button-370 form-button" onclick="ym(87511214,'reachGoal','dev')">
+                                        Разработать проект
+                                    </div>
+                                    <input type="submit" class="button-submit"/>
+                                    <input type="hidden" name="metkaFF" class="form-metka" value="Разработать проект"/>
+                                </div>
+                                <div class="cta-form__check">
+                                    <label class="confidencial__checked"> <input type="checkbox" name="checked"
+                                                                                 value="Согласен"
+                                                                                 checked=""/><span></span> </label>
+                                    Нажимая на кнопку, вы принимаете
+                                    <a href="/politic/">условия</a> обработки персональных данных
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="popup-form--wrap form-ok">
+                        <div class="cta-form__title">
+                            Спасибо<br/>
+                            за обращение
+                        </div>
+                        <div class="cta-form__desc">
+                            Менеджер свяжется<br/>
+                            с Вами по указанному номеру<br/>
+                            в течение 10 минут.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parallax-cloud">
+                <div class="parallax-layer paralax-1" style="top: 190px; left: 32%;">
+                    <img class="lazyload" data-src="/wp-content/themes/krdom2/images/cta_1_px-1.png" alt="cta"/>
+                </div>
+                <div class="parallax-layer paralax-2" style="top: 380px; left: 53%;">
+                    <img class="lazyload" data-src="/wp-content/themes/krdom2/images/cta_1_px-2.png" alt="cta"/>
+                </div>
+                <div class="parallax-layer paralax-3" style="top: 130px; left: 37%;">
+                    <img class="lazyload" data-src="/wp-content/themes/krdom2/images/cta_1_px-3.png" alt="cta"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-winter padding--100" id="winter">
+        <div class="wrap">
+            <div class="winter-box">
+                <div class="title-block">Принимаем заявки на <span>зимнее</span> строительство</div>
+                <div class="zima-container">
+                    <div class="zima-item">
+                        <div class="zima-svg">
+                            <img src="images/GKLvbnqvlWvk.svg" alt=""/>
+                        </div>
+                        <div class="zima-desc"><span>Зимний лес</span> чистый и лучше всего подходит для строительства
+                        </div>
+                    </div>
+                    <div class="zima-item">
+                        <div class="zima-svg">
+                            <img src="images/Yd4aQKjxAvDE.svg" alt=""/>
+                        </div>
+                        <div class="zima-desc"><span>Монтируем фундамент</span> зимой: свайно-винтовой или
+                            свайно-забивной
+                        </div>
+                    </div>
+                    <div class="zima-item">
+                        <div class="zima-svg">
+                            <img src="images/huMBiU3boJ2y.svg" alt=""/>
+                        </div>
+                        <div class="zima-desc"><span>Очистка участка</span> от снега и подготовка к стройке за наш счёт
+                        </div>
+                    </div>
+                </div>
+                <a
+                        class="button onlypc popup-view"
+                        href="#callme"
+                        data-popup="modal"
+                        data-title="Заявка на зимнее строительство"
+                        data-metka="Оставить заявку на зимнее строительство"
+                        data-button="Оставить заявку"
+                        onclick="ym(87511214,'reachGoal','zima')"
+                >
+                    Оставить заявку
+                </a>
+                <a class="button onlymob2" href="tel:+73822330068" onclick="ym(87511214,'reachGoal','phone')">Оставить
+                    заявку</a>
+            </div>
+        </div>
+    </section>
+    <section aria-label="Наши работы" class="house-block padding--120">
+        <div class="wrap nopad">
+            <div class="title-block">Наши <span>работы</span></div>
+
+            <div class="multiple-items slider">
+                <div>
+                    <img class="lazyload" src="images/zujNpD2oaHDT.jpg" alt="Баня из бруса с террасой"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/Mr4h49URx0x7.jpg"
+                         alt="Современная баня из профилированного бруса"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/nLmRjVB7jutf.jpg" alt="Первый этап строительства бани"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/tOK098IdqfgV.jpg" alt="Баня из профилированного бруса"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/tQZmCBpa02Xl.jpg" alt="Баня из бруса"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/s50vsmALFlZa.jpg" alt="Баня из профилированного бруса в Томске"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/ny1Iv9JCFmaL.jpg" alt="Баня из профилированного бруса"/>
+                </div>
+                <div>
+                    <img class="lazyload" src="images/6jhm86i8mj6u.jpg" alt="Баня из бруса в Томске"/>
+                </div>
+            </div>
+
+            <div class="house-item__btn allprojects2">
+                <a class="button korrbut" href="/portfolio/"><span>Посмотреть все работы</span></a>
+            </div>
+        </div>
+    </section>
+    <section aria-label="Проведем экскурсию" class="cta cta-block-3 margin--120 lazyload" data-src="/wp-content/themes/krdom2/images/cta_3_bg.jpg">
+        <div class="wrap">
+            <div class="cta-text">
+                <div class="title-block">Проведем <span>экскурсию</span> на производстве</div>
+                <div class="cta-text__list">
+                    <div class="stages-cart-item__name-2">
+                        Во время экскурсии Вы:
+                    </div>
+                    <div class="list-check">
+                        Своими глазами сможете<br/>
+                        изучить выставочные образцы
+                    </div>
+                    <div class="list-check">
+                        Зададите интересующие Вас<br/>
+                        вопросы строителям
+                    </div>
+                    <div class="list-check">
+                        Подберете подходящий проект<br/>
+                        бани
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-form">
+                <div class="cta-form--wrap">
+                    <div class="popup-form--wrap form-hide">
+                        <div class="cta-form__title ta-center">
+                            Свяжитесь с нами
+                        </div>
+                        <div class="ta-center msgall">
+                            <a href="tel:+73822330068" class="number-block"
+                               style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
+
+                            <div class="messager2">
+                                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                            </div>
+                        </div>
+
+                        <div class="cta-form__desc ta-center">
+                            Или оставьте свои контакты.<br/>
+                            Мы свяжемся с Вами в ближайшее время!
+                        </div>
+                        <div class="popup__form">
+                            <form id="form_cta_3" class="form-js" enctype="multipart/form-data" method="post">
+                                <input type="hidden" name="project_name" value="Крепкий Дом Бани"/>
+                                <input type="hidden" name="admin_email" value="info@tomsk-bani.ru"/>
+                                <input type="hidden" name="form_subject" value="Крепкий Дом Бани"/>
+                                <input type="text" class="hidden" name="agree"/>
+                                <div class="cta-form__input">
+                                    <input type="text" maxlength="15" name="Имя" placeholder="Введите ваше имя"
+                                           class="input-text"/>
+                                </div>
+                                <div class="cta-form__input">
+                                    <input type="text" name="Телефон" placeholder="Введите ваш телефон"
+                                           class="input-text mask validate"/>
+                                </div>
+
+                                <div class="cta-form__btn">
+                                    <div class="button button-370 form-button">
+                                        Записаться<br/>
+                                        на экскурсию
+                                    </div>
+                                    <input type="submit" class="button-submit"/>
+                                    <input type="hidden" name="metkaFF" class="form-metka"
+                                           value="Записаться на экскурсию"/>
+                                </div>
+                                <div class="cta-form__check">
+                                    <label class="confidencial__checked"> <input type="checkbox" name="checked"
+                                                                                 value="Согласен"
+                                                                                 checked=""/><span></span> </label>
+                                    Нажимая на кнопку, вы принимаете
+                                    <a href="/politic/">условия</a> обработки персональных данных
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="popup-form--wrap form-ok">
+                        <div class="cta-form__title">
+                            Спасибо<br/>
+                            за обращение
+                        </div>
+                        <div class="cta-form__desc">
+                            Менеджер свяжется<br/>
+                            с вами по указанному номеру<br/>
+                            в течение 10 минут.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parallax-cloud">
+                <div class="parallax-layer paralax-1" style="top: -90px; left: 35%;">
+                    <img class="lazyload" data-src="/wp-content/themes/krdom2/images/bird-2.png"
+                         alt="Птица Крепкий Дом 2"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section aria-label="Гарантия" class="guarantee-block padding--120">
+        <div class="wrap">
+            <div class="title-block"><span>Гарантии</span> от Крепкого Дома</div>
+            <div class="guarantee-list">
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Работаем<br/>
+                            официально
+                        </div>
+                        <div class="material-item__desc">
+                            Фиксируем все свои<br/>
+                            обязательства в договоре
+                        </div>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Гарантия<br/>
+                            на баню 1 год
+                        </div>
+                        <div class="material-item__desc">
+                            Гарантия на наши<br/>
+                            бани по договору - 1 год
+                        </div>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Фиксируем<br/>
+                            финальную цену
+                        </div>
+                        <div class="material-item__desc">
+                            Окончательную цену<br/>
+                            фиксируем в договоре.<br/>
+                            Никаких переплат!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section aria-label="Отызвы" class="house-block padding--120" id="otz">
+        <div class="wrap nopad">
+            <div class="title-block padd"><span>Отзывы</span> наших клиентов</div>
+            <div class="house-list--wrap">
+                <div class="slider review-list--slider padd">
+                    {% include 'components/gallery-card.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

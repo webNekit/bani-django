@@ -1,0 +1,100 @@
+{% load static %}
+<header class="header-block">
+    <div class="wrap">
+        <div class="header-top">
+            <div class="logo-block">
+                <a href="{% url 'main:index' %}">
+                    <img class="logo-block__img" src="{% static 'images/ZC0WzDL3rclH.png' %}"
+                         alt="Строительство бань в Томске - Крепкий Дом"/>
+                </a>
+                <span class="logo-block__desc">
+                    Строительство бань<br/>
+                    из бруса и продажа <br/>
+                    готовых бань в Томске
+                </span>
+                <div class="navigation-mobile mob">
+                    <span class="srvbtn-trigger"><i></i></span>
+                </div>
+            </div>
+            <nav class="navigation">
+                <div class="popup-close"><span></span></div>
+                <ul class="menu-block">
+                    <li><a href="{% url 'constructor_baths:index' %}">Строительство бань</a></li>
+                    <li><a href="{% url 'ready_baths:index' %}">Готовые бани</a></li>
+                    <li><a href="{% url 'portfolio:index' %}">Наши работы</a></li>
+                    <li><a href="{% url 'reviews:index' %}">Отзывы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="phone-block--wrap">
+                <div class="navigation-mobile">
+                    <span class="srvbtn-trigger"><i></i></span>
+                </div>
+                <div class="phone-block">
+                    <a href="tel:+73822330068" class="number-block">8 (3822) 33-00-68</a>
+                    <div class="messager">
+                        <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-upt">
+            <h1 class="utp-block__h1">Купить баню<span>«под ключ»</span> в Томске</h1>
+            <ul class="main-section-list">
+                <li>
+                    <div class="image-wrap">
+                        <img src="{% static 'images/Y4pEimcI09T9.svg' %}" class="mobico" alt=""/>
+                        <img src="{% static 'images/1ToU1Az2Na5G.svg' %}" class="pcico" alt=""/>
+                    </div>
+                    <div class="utp-block__h2">
+                        <a class="a-winter" href="#winter">Строим зимой</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image-wrap">
+                        <img src="{% static 'images/jfXpUCEJ9Y5s.svg' %}" alt=""/>
+                    </div>
+                    <div class="utp-block__h2">
+                        <a class="a-promo" href="#promo">Акция на готовые бани</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image-wrap">
+                        <img src="{% static 'images/OWtJ0gheu8hT.svg' %}" alt=""/>
+                    </div>
+                    <div class="utp-block__h2">Возведем фундамент</div>
+                </li>
+                <li>
+                    <div class="image-wrap">
+                        <img src="{% static 'images/HPFeJSyNtGEm.svg' %}" alt=""/>
+                    </div>
+                    <div class="utp-block__h2">Рассрочка или кредит</div>
+                </li>
+                <li>
+                    <div class="image-wrap">
+                        <img src="{% static 'images/TNBdxv4C22ht.svg' %}" alt=""/>
+                    </div>
+                    <div class="utp-block__h2">Cтроим бани более 15 лет</div>
+                </li>
+            </ul>
+        </div>
+        <div class="header-plus">
+            <div class="h-plus">
+                <img src="{% static 'images/ISilDtSkufZY.png' %}" class="h-plus__icon" alt="Работаем по договору"/>
+                <div class="h-plus__text">
+                    Работаем по договору<br/>
+                    с фиксированной ценой<br/>
+                    и гарантией 1 год
+                </div>
+            </div>
+        </div>
+        <div class="header-btn">
+            <a class="button button-370 popup-view onlypc" href="#callme" data-popup="modal"
+               data-title="Рассчитать стоимость бани" data-metka="Рассчитать стоимость бани"
+               data-button="Рассчитать стоимость бани">
+                <span>Рассчитать стоимость бани</span>
+            </a>
+            <a class="button button-370 onlymob2" href="tel:+73822330068"><span>Рассчитать стоимость бани</span></a>
+        </div>
+    </div>
+</header>

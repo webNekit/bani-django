@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+    <style>
+        img:is([sizes="auto" i], [sizes^="auto," i]) {
+            contain-intrinsic-size: 3000px 1500px;
+        }
+    </style>
+    <title>{% block title %}{% endblock %} - Крепкий Дом Бани</title>
+    {% block meta %}
+        <meta name="description" content="
+                {{ meta_description|default:'Купить баню любого размера в Томске. Мы 15 лет строим бани из бруса «под ключ». Есть выставочные образцы. Построим жаркую баню за 10 дней недорого! Гарантия по договору.' }}"/>
+        <meta property="og:locale" content="ru_RU"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title"
+              content="{{ meta_title|default:'Купить баню в Томске «под ключ» недорого - Крепкий Дом Бани' }}"/>
+        <meta property="og:description" content="
+                {{ meta_description|default:'Купить баню любого размера в Томске. Мы 15 лет строим бани из бруса «под ключ». Есть выставочные образцы. Построим жаркую баню за 10 дней недорого! Гарантия по договору.' }}"/>
+        <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+        <meta property="og:site_name" content="Крепкий Дом Бани"/>
+        <meta property="article:modified_time" content="2025-01-16T06:57:12+00:00"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="msapplication-TileColor" content="#da532c"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="HandheldFriendly" content="true"/>
+    {% endblock %}
+    <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
+    {% include 'partials/styles.html' %}
+    {% include 'partials/scripts.html' %}
+</head>
+<body class="page-template-default page wp-embed-responsive singular image-filters-enabled">
+{% include 'partials/header.html' %}
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</div>
+{% include 'partials/contacts.html' %}
+{% include 'partials/footer.html' %}
+<div class="callme-popup">
+    <div class="popup-close--2"></div>
+    <div class="popup-close"><span></span></div>
+    <div class="popup-form">
+        <div class="popup-form--wrap form-hide">
+            <div class="cta-form__title ta-center">Введите свои данные</div>
+            <div class="cta-form__desc ta-center">Свяжитесь с нами</div>
+            <div class="ta-center msgall">
+                <a href="tel:+73822330068" class="number-block"
+                   style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
+                <div class="messager2">
+                    <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                </div>
+            </div>
+            <div class="cta-form__desc ta-center">
+                Или оставьте свои контакты.<br/>
+                Мы свяжемся с Вами в ближайшее время!
+            </div>
+            <div class="popup__form">
+                <form id="form_callme" class="form-js" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="project_name" value="Крепкий Дом Бани"/>
+                    <input type="hidden" name="admin_email" value="info@tomsk-bani.ru"/>
+                    <input type="hidden" name="form_subject" value="Крепкий Дом Бани"/>
+                    <input type="text" class="hidden" name="agree"/>
+                    <div class="cta-form__input">
+                        <input type="text" maxlength="15" name="Имя" placeholder="Введите Ваше имя" class="input-text"/>
+                    </div>
+                    <div class="cta-form__input">
+                        <input type="text" name="Телефон" placeholder="Введите Ваш телефон"
+                               class="input-text mask validate"/>
+                    </div>
+                    <div class="cta-form__btn">
+                        <div class="button button-370 form-button">
+                            Разработать проект
+                        </div>
+                        <input type="submit" class="button-submit"/>
+                        <input type="hidden" name="metkaFF" class="form-metka" value="popup"/>
+                    </div>
+                    <div class="cta-form__check">
+                        <label class="confidencial__checked">
+                            <input type="checkbox" name="checked" value="Согласен" checked=""/>
+                            <span></span>
+                        </label>
+                        Нажимая на кнопку, вы принимаете
+                        <a href="/politic/" target="blank">условия</a> обработки персональных данных
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup-form--wrap form-ok">
+            <div class="cta-form__title">
+                Спасибо<br/>
+                за обращение
+            </div>
+            <div class="cta-form__desc">
+                Менеджер свяжется<br/>
+                с вами по указанному номеру<br/>
+                в течение 10 минут.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

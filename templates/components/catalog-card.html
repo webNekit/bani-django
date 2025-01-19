@@ -1,0 +1,26 @@
+{% load static %}
+<div class="house-item">
+    <div class="house-item__img">
+        <a href="{% url 'constructor_baths:detail' %}">
+            <img src="{% static 'images/EkV6jbFjtilb.png' %}" alt="lazy"/>
+            <img class="lazyload" alt="Готовая баня 2.2х3" src="{% static 'images/dR2DCMF8vpp3.jpg' %}"/>
+        </a>
+    </div>
+    <div class="house-item__name">
+        <a href="{% url 'constructor_baths:detail' %}">Готовая баня 2.2х3</a>
+    </div>
+    <div class="house-item__params">
+        <div class="house-item__param">
+            <span class="icon icon--area"></span>
+            <span>6.6 м<sup>2</sup></span>
+        </div>
+        <div class="house-item__param">
+            <span class="icon icon--size"></span>
+            <span>2.2 × 3 м</span>
+        </div>
+    </div>
+    <div class="house-item__price"><span>290 000</span> ₽</div>
+    <div class="house-item__btn">
+        <a class="button" href="{% url 'constructor_baths:detail' %}"><span>Подробнее</span></a>
+    </div>
+</div>
