@@ -2,14 +2,24 @@
 {% block title %}Отзывы наших клиентов{% endblock %}
 
 {% block content %}
-    <section class="house-block padding--120" id="otz">
-    <div class="wrap nopad">
-        <div class="title-block padd"><span>Отзывы</span> наших клиентов</div>
-        <div class="house-list--wrap">
-            <div class="slider review-list--slider padd mt0">
-                {% include 'components/gallery-card.html' %}
+    <section class="house-block padding--120">
+        <div class="wrap">
+            <div class="title-block" style="float:initial;"><span>Отзывы</span> наших клиентов</div>
+            <!-- templates/reviews/index.html -->
+            <div class="reviews-gallery">
+            {% if reviews and reviews.exists %}
+                {% for review in reviews %}
+                    <div class="review-card">
+                        <video controls>
+                            <source src="{{ review.video.url }}" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                {% endfor %}
+            {% else %}
+                Данный раздел редактируется. Приносим свои извинения!
+            {% endif %}
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

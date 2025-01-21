@@ -40,10 +40,12 @@
         <div class="wrap banises">
             <div class="title-block longtitle">Каталог <span>готовых бань</span> из бруса</div>
             <div class="catalog-list">
-                {% include 'components/catalog-card.html' %}
-                {% include 'components/catalog-card.html' %}
-                {% include 'components/catalog-card.html' %}
-            </div>
+            {% if baths and baths.exists %}
+                {% for bath in baths %}
+                    {% include 'components/catalog-card.html' with bath=bath detail_url=detail_url %}
+                {% endfor %}
+            {% endif %}
+        </div>
         </div>
 
         <div class="house-item__btn button-eshe allprojects">

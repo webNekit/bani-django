@@ -4,144 +4,174 @@
 {% block content %}
     <section class="catalog-block padding--60">
         <div class="wrap">
-            <nav class="breadcrumbs">
-                <a href="/portfolio/" class="breadcrumbs__item">Наши работы</a>
-            </nav>
-            <div class="modal-house portf">
-                <div class="m-house__title do900">Баня-дом из бруса в пос. Нижний Склад</div>
-                <div class="m-house__img">
-                    <div class="m-house-img__default">
-                        <img src="images/IPwbmwbYKZ6M.jpg" alt="Баня-дом из бруса в пос. Нижний Склад"/>
+            <article id="post-150"
+                     class="post-150 post type-post status-publish format-standard hentry category-bany entry">
+                <nav class="breadcrumbs">
+                    <a href="{% url 'constructor_baths:index' %}" class="breadcrumbs__item">Строительство бань</a>
+                    <a href="#" class="breadcrumbs__item">{{ bath.title }}</a>
+                </nav>
+
+                <div class="modal-house">
+                    <div class="m-house__title do900">{{ bath.title }}</div>
+                    <div class="m-house__img">
+                        <div class="m-house-img__default">
+                            <img src="{{ bath.image.url }}" alt="{{ bath.title }}"/>
+                        </div>
+                        <div class="m-house-img__list">
+                            <a href="{{ bath.image.url }}">
+                                <img class="active"
+                                     src="{{ bath.image.url }}"
+                                     alt="{{ bath.title }}"/>
+                            </a>
+                            {% for gallery in galleries %}
+                                <a href="{{ gallery.image.url }}">
+                                    <img class="active"
+                                         src="{{ gallery.image.url }}"
+                                         alt="{{ bath.title }}"/>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="m-house__info">
+                        <div class="m-house__title posle900">{{ bath.title }}</div>
+
+                        <div class="house-item__params">
+                            <div class="house-item__param">
+                                <span class="icon icon--area"></span>
+                                <span><i>{{ bath.total_area }}</i> м<sup>2</sup></span>
+                            </div>
+
+                            <div class="house-item__param">
+                                <span class="icon icon--size"></span>
+                                <span><i>{{ bath.width }} × {{ bath.height }}</i> м</span>
+                            </div>
+                        </div>
+                        <div class="m-house__price">от {{ bath.price }} ₽</div>
+                        <div class="m-house__btn">
+                            <a class="button button-370 popup-view" href="#callme" data-popup="modal"
+                               data-title="Баня из бруса 4х4" data-metka="Баня из бруса 4х4"
+                               data-button="Отправить заявку"><span>Хочу эту баню</span></a>
+                        </div>
+
+                        <div class="credit">
+                            <a class="link popup-view" href="#callme" data-popup="modal" data-title="Баня из бруса 4х4"
+                               data-metka="Рассрочка-кредит: Баня из бруса 4х4" data-button="Отправить заявку">Построить
+                                в рассрочку или кредит</a>
+                        </div>
+                    </div>
+
+                    <div class="m-house__complectation">
+                        <div class="m-house__title-2">
+                            Что входит в стоимость
+                        </div>
+                        <div>
+                            {{ bath.description_primary|safe }}
+                        </div>
+                        <div class="m-house__title-2 mt40">
+                            Дополнительные работы
+                        </div>
+                        <div>
+                            {{ bath.description_secondary|safe }}
+                        </div>
+                    </div>
+
+                    <div class="m-house__haract2">
+                        <div class="m-house__title-2">
+                            Планировка бани
+                        </div>
+
+                        <div class="m-house__haract--wrap">
+                            {% for layout in layouts %}
+                                <div class="haract-list">
+                                    <span>{{ layout.title }}</span><span>{{ layout.area }} м<sup>2</sup></span>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-                <div class="m-house__info">
-                    <div class="m-house__title posle900">Баня-дом из бруса в пос. Нижний Склад</div>
-                    <div class="srok">
-                        <div class="srok-title">Срок строительства:</div>
-                        <div>25 рабочих дней</div>
-                    </div>
-                    <div class="house-item__params">
-                        <div class="house-item__param2">
-                            <span class="icon icon--material"></span>
-                            <span><i>Профилированный брус</i></span>
-                        </div>
-                        <div class="house-item__param squa2">
-                            <span class="icon icon--size"></span>
-                            <span><i>Размеры:</i> 4 × 6 м</span>
-                        </div>
-                        <div class="house-item__param squa2">
-                            <span class="icon icon--size"></span>
-                            <span><i>Терраса:</i> 2 × 6 м</span>
-                        </div>
-
-                        <div class="house-item__param">
-                            <span class="icon icon--area"></span>
-                            <span>72 м<sup>2</sup></span>
-                        </div>
-                        <div class="house-item__param">
-                            <span class="icon icon--door"></span>
-                            <span>4 помещения</span>
+            </article>
+            <!-- #post-150 -->
+        </div>
+    </section>
+    <section class="section section-winter padding--100" id="winter">
+        <div class="wrap">
+            <div class="winter-box">
+                <div class="title-block">Принимаем заявки на <span>зимнее</span> строительство</div>
+                <div class="zima-container">
+                    <div class="zima-item">
+                        <div class="zima-svg"><img src="images/winter-ico1.svg" alt=""/></div>
+                        <div class="zima-desc"><span>Зимний лес</span> чистый и лучше всего подходит для строительства
                         </div>
                     </div>
-                    <div class="m-house__btn">
-                        <a class="button button-370 popup-view" href="#callme" data-popup="modal"
-                           data-title="Узнать стоимость строительства" data-metka="Узнать цену Наши работы Дом-баня"
-                           data-button="Отправить заявку">
-                            <span>Узнать стоимость</span>
-                        </a>
+                    <div class="zima-item">
+                        <div class="zima-svg"><img src="images/winter-ico2.svg" alt=""/></div>
+                        <div class="zima-desc"><span>Монтируем фундамент</span> зимой: свайно-винтовой или
+                            свайно-забивной
+                        </div>
+                    </div>
+                    <div class="zima-item">
+                        <div class="zima-svg"><img src="images/winter-ico3.svg" alt=""/></div>
+                        <div class="zima-desc"><span>Очистка участка</span> от снега и подготовка к стройке за наш счёт
+                        </div>
                     </div>
                 </div>
-
-                <div class="m-house__complectation">
-                    <div class="m-house__title-2">
-                        Выполненные работы
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Возведение фундамента</span>
-                        Свайно-винтовой фундамент
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Сборка дома-бани</span>
-                        Сборка строения из профилированного бруса 140 х 140
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Утепление</span>
-                        Утепление полов и потолков
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Ветро-парозащита</span>
-                        Монтаж ветрозащитной и пароизоляционной мембраны
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Окна и двери</span>
-                        Монтаж окон, дверей, остекление балкона
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Водосток</span>
-                        Монтаж водосточной системы
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Лестница</span>
-                        Изготовление и монтаж лестницы на второй этаж
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Печи</span>
-                        Монтаж двух печей
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Отделка</span>
-                        Отделка всех помещений под ключ
-                    </div>
-                    <div class="list-check">
-                        <span class="list-check--title">Электрика</span>
-                        Монтаж электрики во всех помещениях
-                    </div>
-                </div>
-
-                <div class="m-house__haract2">
-                    <div class="m-house__title-2">
-                        Планировка
-                    </div>
-
-                    <div class="m-house__haract--wrap">
-                        <div class="m-house__haract--title">Первый этаж</div>
-                        <div class="haract-list">
-                            <span>Терраса</span><span>12 м<sup>2</sup></span>
-                        </div>
-                        <div class="haract-list">
-                            <span>Комната отдыха</span><span>16 м<sup>2</sup></span>
-                        </div>
-                        <div class="haract-list">
-                            <span>Парная</span><span>4 м<sup>2</sup></span>
-                        </div>
-                        <div class="haract-list">
-                            <span>Мойка</span><span>4 м<sup>2</sup></span>
-                        </div>
-                    </div>
-
-                    <div class="m-house__haract--wrap">
-                        <div class="m-house__haract--title">Второй этаж</div>
-                        <div class="haract-list">
-                            <span>Комната</span><span>24 м<sup>2</sup></span>
-                        </div>
-                        <div class="haract-list">
-                            <span>Балкон</span><span>12 м<sup>2</sup></span>
-                        </div>
-                    </div>
-
-                    <div class="m-house__haract--wrap"></div>
-                </div>
+                <a
+                        class="button onlypc popup-view"
+                        href="#callme"
+                        data-popup="modal"
+                        data-title="Заявка на зимнее строительство"
+                        data-metka="Оставить заявку на зимнее строительство"
+                        data-button="Оставить заявку"
+                        onclick="ym(87511214,'reachGoal','zima')"
+                >
+                    Оставить заявку
+                </a>
+                <a class="button onlymob2" href="tel:+73822330068" onclick="ym(87511214,'reachGoal','phone')">Оставить
+                    заявку</a>
             </div>
         </div>
     </section>
-    <section class="house-block padding--120">
+    <section aria-label="Гарантия" class="guarantee-block padding--120">
         <div class="wrap">
-            <div class="title-block"><span>Фотоотчет</span> строительства</div>
-            <div class="portfolio-photo-list">
-                <a class="portfolio-photo-list-item" data-fancybox="1"
-                   href="/wp-content/themes/krdom2/images/portfolio/2/1.jpg"><img class="lazyload"
-                                                                                  src="images/xvoW9lkfqhwp.jpg"
-                                                                                  alt="Баня-дом из бруса в пос. Нижний Склад"/></a>
+            <div class="title-block"><span>Гарантии</span> от Крепкого Дома</div>
+            <div class="guarantee-list">
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Работаем<br/>
+                            официально
+                        </div>
+                        <div class="material-item__desc">
+                            Фиксируем все свои<br/>
+                            обязательства в договоре
+                        </div>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Гарантия<br/>
+                            на баню 1 год
+                        </div>
+                        <div class="material-item__desc">
+                            Гарантия на наши<br/>
+                            бани по договору - 1 год
+                        </div>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-item__info">
+                        <div class="material-item__name">
+                            Фиксируем<br/>
+                            финальную цену
+                        </div>
+                        <div class="material-item__desc">
+                            Окончательную цену<br/>
+                            фиксируем в договоре.<br/>
+                            Никаких переплат!
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

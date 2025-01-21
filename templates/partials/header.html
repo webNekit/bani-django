@@ -1,21 +1,8 @@
 {% load static %}
-<header class="header-block">
+<header class="header-block" style="background-image: url('{% static 'images/header-bg.jpg' %}');">
     <div class="wrap">
         <div class="header-top">
-            <div class="logo-block">
-                <a href="{% url 'main:index' %}">
-                    <img class="logo-block__img" src="{% static 'images/ZC0WzDL3rclH.png' %}"
-                         alt="Строительство бань в Томске - Крепкий Дом"/>
-                </a>
-                <span class="logo-block__desc">
-                    Строительство бань<br/>
-                    из бруса и продажа <br/>
-                    готовых бань в Томске
-                </span>
-                <div class="navigation-mobile mob">
-                    <span class="srvbtn-trigger"><i></i></span>
-                </div>
-            </div>
+            {% include 'components/logo.html' %}
             <nav class="navigation">
                 <div class="popup-close"><span></span></div>
                 <ul class="menu-block">
@@ -39,7 +26,7 @@
             </div>
         </div>
         <div class="header-upt">
-            <h1 class="utp-block__h1">Купить баню<span>«под ключ»</span> в Томске</h1>
+            <h1 class="utp-block__h1">Купить баню<span>«под ключ»</span></h1>
             <ul class="main-section-list">
                 <li>
                     <div class="image-wrap">

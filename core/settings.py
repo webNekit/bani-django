@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.app_name',
             ],
         },
     },
@@ -130,6 +131,12 @@ STATICFILES_DIRS = [BASE_DIR / 'static/']
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+
+APP_NAME = 'Бани Кузбасса'
+
+TELEGRAM_CHAT_ID = '-4608828583'
+TELEGRAM_BOT_TOKEN = '7709145703:AAHqGhKeqnbrovT1qR-AOL-poy2d5sZuasM'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

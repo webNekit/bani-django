@@ -5,5 +5,5 @@ app_name = 'constructor_baths'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('detail/', views.detail, name='detail'),
+    path('<slug:slug>/', views.detail, name='detail'),
 ]

@@ -1,14 +1,7 @@
 {% load static %}
 <footer class="footer-block">
     <div class="wrap">
-        <div class="logo-block">
-            <img class="logo-block__img" src="{% static 'images/ZC0WzDL3rclH.png' %}" alt="Крепкий Дом Бани"/>
-            <span class="logo-block__desc">
-                Строительство бань<br/>
-                из бруса и продажа<br/>
-                готовых бань в Томске
-            </span>
-        </div>
+        {% include 'components/logo.html' %}
 
         <div class="footer__link">
             <a href="/politic/" target="blank">Политика конфиденциальности</a>

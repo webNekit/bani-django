@@ -2,59 +2,61 @@
 {% block title %}Строительство бань{% endblock %}
 
 {% block content %}
-    <section class="section section-winter padding--100" id="winter">
-        <div class="wrap">
-            <div class="winter-box">
-                <div class="title-block">Принимаем заявки на <span>зимнее</span> строительство</div>
-                <div class="zima-container">
-                    <div class="zima-item">
-                        <div class="zima-svg"><img src="images/winter-ico1.svg" alt=""/></div>
-                        <div class="zima-desc"><span>Зимний лес</span> чистый и лучше всего подходит для строительства
-                        </div>
-                    </div>
-                    <div class="zima-item">
-                        <div class="zima-svg"><img src="images/winter-ico2.svg" alt=""/></div>
-                        <div class="zima-desc"><span>Монтируем фундамент</span> зимой: свайно-винтовой или
-                            свайно-забивной
-                        </div>
-                    </div>
-                    <div class="zima-item">
-                        <div class="zima-svg"><img src="images/winter-ico3.svg" alt=""/></div>
-                        <div class="zima-desc"><span>Очистка участка</span> от снега и подготовка к стройке за наш счёт
-                        </div>
+<section class="section section-winter padding--100" id="winter">
+    <div class="wrap">
+        <div class="winter-box">
+            <div class="title-block">Принимаем заявки на <span>зимнее</span> строительство</div>
+            <div class="zima-container">
+                <div class="zima-item">
+                    <div class="zima-svg"><img src="images/winter-ico1.svg" alt=""/></div>
+                    <div class="zima-desc"><span>Зимний лес</span> чистый и лучше всего подходит для строительства
                     </div>
                 </div>
-                <a
-                        class="button onlypc popup-view"
-                        href="#callme"
-                        data-popup="modal"
-                        data-title="Заявка на зимнее строительство"
-                        data-metka="Оставить заявку на зимнее строительство"
-                        data-button="Оставить заявку"
-                        onclick="ym(87511214,'reachGoal','zima')"
-                >
-                    Оставить заявку
-                </a>
-                <a class="button onlymob2" href="tel:+73822330068" onclick="ym(87511214,'reachGoal','phone')">Оставить
-                    заявку</a>
+                <div class="zima-item">
+                    <div class="zima-svg"><img src="images/winter-ico2.svg" alt=""/></div>
+                    <div class="zima-desc"><span>Монтируем фундамент</span> зимой: свайно-винтовой или
+                        свайно-забивной
+                    </div>
+                </div>
+                <div class="zima-item">
+                    <div class="zima-svg"><img src="images/winter-ico3.svg" alt=""/></div>
+                    <div class="zima-desc"><span>Очистка участка</span> от снега и подготовка к стройке за наш счёт
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="house-block padding--120" id="projects">
-        <div class="wrap banises">
-            <div class="title-block longtitle">Каталог бань из бруса <span>«под ключ»</span></div>
-
-            <div class="catalog-list">
-                {% include 'components/catalog-card.html' %}
-                {% include 'components/catalog-card.html' %}
-                {% include 'components/catalog-card.html' %}
-            </div>
-        </div>
-
-        <div class="house-item__btn button-eshe allprojects">
-            <a class="button korrbut" href="#allb">
-                <span>Смотреть еще</span>
+            <a
+                    class="button onlypc popup-view"
+                    href="#callme"
+                    data-popup="modal"
+                    data-title="Заявка на зимнее строительство"
+                    data-metka="Оставить заявку на зимнее строительство"
+                    data-button="Оставить заявку"
+                    onclick="ym(87511214,'reachGoal','zima')"
+            >
+                Оставить заявку
             </a>
+            <a class="button onlymob2" href="tel:+73822330068" onclick="ym(87511214,'reachGoal','phone')">Оставить
+                заявку</a>
         </div>
-    </section>
+    </div>
+</section>
+<section class="house-block padding--120" id="projects">
+    <div class="wrap banises">
+        <div class="title-block longtitle">Каталог бань из бруса <span>«под ключ»</span></div>
+
+        <div class="catalog-list">
+            {% if baths and baths.exists %}
+                {% for bath in baths %}
+                    {% include 'components/catalog-card.html' with bath=bath detail_url=detail_url %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="house-item__btn button-eshe allprojects">
+        <a class="button korrbut" href="#allb">
+            <span>Смотреть еще</span>
+        </a>
+    </div>
+</section>
 {% endblock %}
