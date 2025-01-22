@@ -1,0 +1,12 @@
+{% if reviews and reviews.exists %}
+    {% for review in reviews %}
+        <div class="review-card">
+            <video controls>
+                <source src="{{ review.video.url }}" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+    {% endfor %}
+{% else %}
+    Данный раздел редактируется. Приносим свои извинения!
+{% endif %}

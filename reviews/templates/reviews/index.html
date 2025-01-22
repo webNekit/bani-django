@@ -7,18 +7,7 @@
             <div class="title-block" style="float:initial;"><span>Отзывы</span> наших клиентов</div>
             <!-- templates/reviews/index.html -->
             <div class="reviews-gallery">
-            {% if reviews and reviews.exists %}
-                {% for review in reviews %}
-                    <div class="review-card">
-                        <video controls>
-                            <source src="{{ review.video.url }}" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </div>
-                {% endfor %}
-            {% else %}
-                Данный раздел редактируется. Приносим свои извинения!
-            {% endif %}
+                {% include 'components/reviews-list.html' with reviews=reviews %}
             </div>
         </div>
     </section>

@@ -1361,7 +1361,7 @@ background-image: url(../images/2irZ0hqOPp15.jpg);
 }
 .contact-item {
     float: left;
-    width: 25%;
+    width: 33.333%;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -4954,12 +4954,7 @@ margin-right:7px;}
     padding-top: 50px;
 }
 }
-.cat-gotov{
-	background-image: linear-gradient( rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72) ),url(../images/ZivRcBzhjbkf.jpg);
-}
-.cat-big{
-	background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url(../images/wVpXvcgoMU7O.jpg);
-}
+
 @media(max-width:480px){
 	.cat-gotov{
 	background-image: linear-gradient( rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72) ),url(../images/UfBiH5XOCmFu.jpg);

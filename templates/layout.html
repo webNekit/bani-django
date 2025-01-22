@@ -21,10 +21,19 @@
             background-size: contain;
             background-position: center left;
         }
+
+        .cat-gotov {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), url({% static 'images/cat-gotov-bg.webp' %});
+        }
+
+        .cat-big {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static 'images/cat-big-bg.jpeg' %});
+        }
     </style>
     <title>{% block title %}{% endblock %} - {{ APP_NAME }}</title>
     {% block meta %}
         <meta name="description" content="
+
 
 
 
@@ -34,6 +43,7 @@
         <meta property="og:title"
               content="{{ meta_title|default:'Купить баню в Томске «под ключ» недорого - Крепкий Дом Бани' }}"/>
         <meta property="og:description" content="
+
 
 
 
@@ -68,13 +78,13 @@
     <div class="popup-close"><span></span></div>
     <div class="popup-form">
         <div class="popup-form--wrap form-hide">
-            <div class="cta-form__title ta-center">Введите свои данные</div>
             <div class="cta-form__desc ta-center">Свяжитесь с нами</div>
             <div class="ta-center msgall">
-                <a href="tel:+73822330068" class="number-block"
-                   style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
+                <a href="tel:{{ contact_info.phone_number }}" class="number-block"
+                   style="float: none; margin-top: 5px; display: inline-block;">{{ contact_info.phone_format }}</a>
                 <div class="messager2">
-                    <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                    <a rel="nofollow" class="i-msg msg-whatsapp2"
+                       href="https://wa.me/{{ contact_info.phone_number }}"></a>
                 </div>
             </div>
             <div class="cta-form__desc ta-center">
@@ -82,27 +92,7 @@
                 Мы свяжемся с Вами в ближайшее время!
             </div>
             <div class="popup__form">
-                <form class="form-main" enctype="multipart/form-data" method="post"
-                      hx-post="{% url 'main:telegram_feedback' %}"
-                      hx-target="#form-message"
-                      hx-swap="innerHTML">
-                    {% csrf_token %}
-                    {% if product_name %}
-                        <input type="hidden" id="product_name" name="product_name" value="{{ product_name }}"/>
-                    {% endif %}
-                    <div class="cta-form__input">
-                        <input type="text" maxlength="15" id="name" name="name" placeholder="Введите Ваше имя"
-                               class="input-text"/>
-                    </div>
-                    <div class="cta-form__input">
-                        <input type="text" id="phone" name="phone" placeholder="Введите Ваш телефон"
-                               class="input-text mask validate"/>
-                    </div>
-                    <div class="cta-form__btn">
-                        <button type="submit" class="button button-370 form-button">Разработать проект</button>
-                    </div>
-                </form>
-                <div id="form-message" class="form-message"></div>
+                {% include 'components/form.html' %}
             </div>
         </div>
         <div class="popup-form--wrap form-ok">

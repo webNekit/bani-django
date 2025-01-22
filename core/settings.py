@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ready_baths.apps.ReadyBathsConfig',
     'reviews.apps.ReviewsConfig',
     'portfolio.apps.PortfolioConfig',
+    'contact.apps.ContactConfig',
     'main.apps.MainConfig',
 ]
 
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processors.app_name',
+                'contact.context_processors.contact_info',
             ],
         },
     },

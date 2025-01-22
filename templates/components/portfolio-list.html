@@ -1,0 +1,18 @@
+{% if galleries and galleries.exists %}
+    <div>
+        <div class="multiple-items slider">
+            {% for gallery in galleries %}
+                <div>
+                    <img class="lazyload" src="{{ gallery.image.url }}" alt="Наши работы {{ APP_NAME }}"/>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if is_button %}
+        <div class="house-item__btn allprojects2">
+            <a class="button korrbut" href="{% url 'portfolio:index' %}"><span>Посмотреть все работы</span></a>
+        </div>
+    {% endif %}
+{% else %}
+    <p class="">Данный раздел редактируется, приносим свои извинения!</p>
+{% endif %}

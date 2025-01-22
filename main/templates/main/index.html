@@ -37,9 +37,6 @@
                 <a href="{% url 'ready_baths:index' %}" class="catalog_block-item cat-gotov">
                     <h3 class="catalog_block-item_title"><span>Готовые бани</span> из бруса</h3>
                     <div class="catdesc2">Мобильные бани: <span>от 257 000₽</span>.</div>
-                    <div class="catdesc"><span>2×2</span> <span>2×3</span> <span>2×4</span> <span>2×5</span>
-                        <span>2×6</span> <span>другие</span></div>
-
                     <div class="house-item__btn">
                         <div class="button"><span>Посмотреть проекты</span></div>
                     </div>
@@ -47,9 +44,6 @@
                 <a href="{% url 'constructor_baths:index' %}" class="catalog_block-item cat-big">
                     <h3 class="catalog_block-item_title"><span>Строительство бань</span> из бруса</h3>
                     <div class="catdesc2">Полноразмерные бани: <span>от 450 000₽</span>.</div>
-                    <div class="catdesc"><span>4×4</span> <span>4×5</span> <span>5×6</span> <span>6×7</span>
-                        <span>6×10</span> <span>другие</span></div>
-
                     <div class="house-item__btn">
                         <div class="button"><span>Посмотреть проекты</span></div>
                     </div>
@@ -98,44 +92,20 @@
                         <div class="cta-form__title ta-center">
                             Свяжитесь с нами
                         </div>
-
                         <div class="ta-center msgall">
-                            <a href="tel:+73822330068" class="number-block"
-                               style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
-
+                            <a href="tel:{{ contact_info.phone_number }}" class="number-block"
+                               style="float: none; margin-top: 5px; display: inline-block;">{{ contact_info.phone_format }}</a>
                             <div class="messager2">
-                                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                                <a rel="nofollow" class="i-msg msg-whatsapp2"
+                                   href="https://wa.me/{{ contact_info.phone_number }}"></a>
                             </div>
                         </div>
-
                         <div class="cta-form__desc ta-center">
                             Или оставьте свои контакты.<br/>
                             Мы свяжемся с Вами в ближайшее время!
                         </div>
                         <div class="popup__form">
-                            <form id="form_cta_1" class="form-js" enctype="multipart/form-data" method="post">
-                                <input type="hidden" name="project_name" value="Крепкий Дом Бани"/>
-                                <div class="cta-form__input">
-                                    <input type="text" maxlength="15" name="Имя" placeholder="Введите ваше имя"
-                                           class="input-text"/>
-                                </div>
-                                <div class="cta-form__input">
-                                    <input type="text" name="Телефон" placeholder="Введите ваш телефон"
-                                           class="input-text mask validate"/>
-                                </div>
-                                <div class="cta-form__btn">
-                                    <buttom type="submit" class="button button-370 form-button">
-                                        Разработать проект
-                                    </buttom>
-                                </div>
-                                <div class="cta-form__check">
-                                    <label class="confidencial__checked">
-                                        <input type="checkbox" name="checked" value="Согласен" checked=""/><span></span>
-                                    </label>
-                                    Нажимая на кнопку, вы принимаете
-                                    <a href="/politic/">условия</a> обработки персональных данных
-                                </div>
-                            </form>
+                            {% include 'components/form.html' with service="Разработка индивидуального проекта" %}
                         </div>
                     </div>
                     <div class="popup-form--wrap form-ok">
@@ -191,39 +161,7 @@
     <section aria-label="Наши работы" class="house-block padding--120">
         <div class="wrap nopad">
             <div class="title-block">Наши <span>работы</span></div>
-
-            <div class="multiple-items slider">
-                <div>
-                    <img class="lazyload" src="images/zujNpD2oaHDT.jpg" alt="Баня из бруса с террасой"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/Mr4h49URx0x7.jpg"
-                         alt="Современная баня из профилированного бруса"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/nLmRjVB7jutf.jpg" alt="Первый этап строительства бани"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/tOK098IdqfgV.jpg" alt="Баня из профилированного бруса"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/tQZmCBpa02Xl.jpg" alt="Баня из бруса"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/s50vsmALFlZa.jpg" alt="Баня из профилированного бруса в Томске"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/ny1Iv9JCFmaL.jpg" alt="Баня из профилированного бруса"/>
-                </div>
-                <div>
-                    <img class="lazyload" src="images/6jhm86i8mj6u.jpg" alt="Баня из бруса в Томске"/>
-                </div>
-            </div>
-
-            <div class="house-item__btn allprojects2">
-                <a class="button korrbut" href="{% url 'portfolio:index' %}"><span>Посмотреть все работы</span></a>
-            </div>
-        </div>
+            {% include 'components/portfolio-list.html' with galleries=galleries is_button=True %}
     </section>
     <section aria-label="Проведем экскурсию" class="cta cta-block-3 margin--120 lazyload">
         <div class="wrap">
@@ -255,11 +193,11 @@
                             Свяжитесь с нами
                         </div>
                         <div class="ta-center msgall">
-                            <a href="tel:+73822330068" class="number-block"
-                               style="float: none; margin-top: 5px; display: inline-block;">8 (3822) 33-00-68</a>
-
+                            <a href="tel:{{ contact_info.phone_number }}" class="number-block"
+                               style="float: none; margin-top: 5px; display: inline-block;">{{ contact_info.phone_format }}</a>
                             <div class="messager2">
-                                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                                <a rel="nofollow" class="i-msg msg-whatsapp2"
+                                   href="https://wa.me/{{ contact_info.phone_number }}"></a>
                             </div>
                         </div>
 
@@ -268,48 +206,7 @@
                             Мы свяжемся с Вами в ближайшее время!
                         </div>
                         <div class="popup__form">
-                            <form id="form_cta_3" class="form-js" enctype="multipart/form-data" method="post">
-                                <input type="hidden" name="project_name" value="Крепкий Дом Бани"/>
-                                <input type="hidden" name="admin_email" value="info@tomsk-bani.ru"/>
-                                <input type="hidden" name="form_subject" value="Крепкий Дом Бани"/>
-                                <input type="text" class="hidden" name="agree"/>
-                                <div class="cta-form__input">
-                                    <input type="text" maxlength="15" name="Имя" placeholder="Введите ваше имя"
-                                           class="input-text"/>
-                                </div>
-                                <div class="cta-form__input">
-                                    <input type="text" name="Телефон" placeholder="Введите ваш телефон"
-                                           class="input-text mask validate"/>
-                                </div>
-
-                                <div class="cta-form__btn">
-                                    <div class="button button-370 form-button">
-                                        Записаться<br/>
-                                        на экскурсию
-                                    </div>
-                                    <input type="submit" class="button-submit"/>
-                                    <input type="hidden" name="metkaFF" class="form-metka"
-                                           value="Записаться на экскурсию"/>
-                                </div>
-                                <div class="cta-form__check">
-                                    <label class="confidencial__checked"> <input type="checkbox" name="checked"
-                                                                                 value="Согласен"
-                                                                                 checked=""/><span></span> </label>
-                                    Нажимая на кнопку, вы принимаете
-                                    <a href="/politic/">условия</a> обработки персональных данных
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="popup-form--wrap form-ok">
-                        <div class="cta-form__title">
-                            Спасибо<br/>
-                            за обращение
-                        </div>
-                        <div class="cta-form__desc">
-                            Менеджер свяжется<br/>
-                            с вами по указанному номеру<br/>
-                            в течение 10 минут.
+                            {% include 'components/form.html' with service="Запись на экскурсию" %}
                         </div>
                     </div>
                 </div>
@@ -371,8 +268,8 @@
         <div class="wrap nopad">
             <div class="title-block padd"><span>Отзывы</span> наших клиентов</div>
             <div class="house-list--wrap">
-                <div class="slider review-list--slider padd">
-                    {% include 'components/gallery-card.html' %}
+                <div class="reviews-gallery">
+                    {% include 'components/reviews-list.html' with reviews=reviews %}
                 </div>
             </div>
         </div>

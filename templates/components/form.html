@@ -1,0 +1,24 @@
+<form class="form-main" enctype="multipart/form-data" method="post"
+      hx-post="{% url 'main:telegram_feedback' %}"
+      hx-target="#form-message"
+      hx-swap="innerHTML">
+    {% csrf_token %}
+    {% if product_name %}
+        <input type="hidden" id="product_name" name="product_name" value="{{ product_name }}"/>
+    {% endif %}
+    {% if service %}
+        <input type="hidden" id="service" name="service" value="{{ service }}">
+    {% endif %}
+    <div class="cta-form__input">
+        <input type="text" maxlength="15" id="name" name="name" placeholder="Введите Ваше имя"
+               class="input-text"/>
+    </div>
+    <div class="cta-form__input">
+        <input type="text" id="phone" name="phone" placeholder="Введите Ваш телефон"
+               class="input-text mask validate"/>
+    </div>
+    <div class="cta-form__btn">
+        <button type="submit" class="button button-370 form-button" style="width: 100%;">Оставить заявку</button>
+    </div>
+</form>
+<div id="form-message" class="form-message"></div>

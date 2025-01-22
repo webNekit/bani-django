@@ -5,11 +5,7 @@
     <section class="house-block padding--120">
         <div class="wrap">
             <div class="title-block">Портфолио <span>построенных</span> бань</div>
-            <div class="multiple-items slider">
-                <div>
-                    <img class="lazyload" src="images/kdnov1.jpg" alt="Баня из бруса с террасой"/>
-                </div>
-            </div>
+            {% include 'components/portfolio-list.html' with galleries=galleries is_button=False %}
         </div>
     </section>
 {% endblock %}

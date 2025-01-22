@@ -2,27 +2,10 @@
 <footer class="footer-block">
     <div class="wrap">
         {% include 'components/logo.html' %}
-
-        <div class="footer__link">
-            <a href="/politic/" target="blank">Политика конфиденциальности</a>
-            <p class="footer__copyright">
-                © ООО «Крепкий Дом» 2018-2025<br/>
-                Все права защищены.
-            </p>
-        </div>
-
-        <div class="footer__social">
-            <div class="footer__social__title">Мы в соцсетях. Присоединяйся!</div>
-            <a rel="nofollow" href="https://vk.com/id270239186" target="blank"><span class="icon icon--vk"></span></a>
-            <a rel="nofollow" href="https://www.youtube.com/channel/UCNfXkApfui1fGnc7UIeY2KA" target="blank"><span
-                    class="icon icon--youtube"></span></a>
-        </div>
-
         <div class="phone-block">
-            <a href="tel:+73822330068" class="number-block" onclick="ym(87511214,'reachGoal','phone')">8 (3822)
-                33-00-68</a>
+            <a href="tel:{{ contact_info.phone_number }}" class="number-block">{{ contact_info.phone_format }}</a>
             <div class="messager">
-                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/79138286148"></a>
+                <a rel="nofollow" class="i-msg msg-whatsapp2" href="https://wa.me/{{ contact_info.phone_number }}"></a>
             </div>
         </div>
     </div>
